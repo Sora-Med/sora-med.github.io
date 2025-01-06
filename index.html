@@ -14,13 +14,107 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 
 	<style>
-        .highlight {
-            background-color: #7CFC00; /* 设置醒目的背景 */
-            color: black; /* 文字颜色为白色 */
-            padding: 15px; /* 添加内边距，使内容更舒适 */
-            border-radius: 15px; /* 圆角效果，半径15px */
-            font-weight: bold; /* 文字加粗 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+	        .highlight {
+	            background-color: #7CFC00; /* 设置醒目的背景 */
+	            color: black; /* 文字颜色为白色 */
+	            padding: 15px; /* 添加内边距，使内容更舒适 */
+	            border-radius: 15px; /* 圆角效果，半径15px */
+	            font-weight: bold; /* 文字加粗 */
+	            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+	        }
+    	</style>
+	<style>
+        .container {
+            position: relative;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border: none;
+        }
+
+        .video-cell {
+            width: 20%;
+        }
+
+        video {
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .word {
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .description {
+            margin-top: 20px;
+            text-align: justify;
+            padding: 20px;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 15px;
+            cursor: pointer;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .prev {
+            left: -50px;
+        }
+
+        .next {
+            right: -50px;
+        }
+
+        .page {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* 添加页码指示器样式 */
+        .page-indicators {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .indicator.active {
+            background-color: #666;
         }
     </style>
 </head>
@@ -520,6 +614,779 @@
 	</div>
 	<h3 id="Comparison" style="text-align: left;">Comparison</h3>
 	<div class="table-responsive pt-3">
+		<div class="container">
+        <!-- 第一页 -->
+        <div class="page active" id="page1">
+            <table>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/Allergo.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Allergo</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/cogvideox-2b.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">CogVideoX-2B</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/cogvideox-5b.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">CogVideoX-5B</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/latte-1.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Latte-1</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/ltx-video.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">LTX-Video</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/mochi-1-preview.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Mochi-1-Preview</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/modelscope.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">ModelScope</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/open-sora.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Open-Sora (v1.2)</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/opensora-plan.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Open-Sora-Plan (v1.3)</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/pyramid-flow.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Pyramid-Flow</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/vchitect.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Vchitect</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/videocrafter2.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">VideoCrafter-2</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/hunyuanvideo.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">HunyuanVideo</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <!-- 添加更多行... -->
+            </table>
+            <div class="description">
+                The short video depicts a medical procedure being performed in a clinical setting. The scene is set in a treatment room equipped with medical supplies and equipment. Two healthcare professionals, dressed in blue scrubs and wearing gloves, are attending to a patient who is lying face down on a treatment table. The patient has visible skin lesions or moles on their back, which are the focus of the procedure. The healthcare professionals are engaged in a detailed process involving the patient's back. One of them is seen handling a syringe, likely preparing to administer an injection or perform a biopsy. The other professional assists by holding a piece of gauze or cloth, possibly to manage any bleeding or to apply pressure to the treated area. The procedure appears to be meticulous and involves careful handling of medical instruments and materials. The healthcare professionals work in a coordinated manner, ensuring that the patient's back is properly treated. The video captures the steps involved in the medical procedure, highlighting the precision and care taken by the medical staff to address the patient's skin condition.
+            </div>
+        </div>
+        <!-- 第二页 -->
+        <div class="page" id="page2">
+            <table>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/Allergo.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Allergo</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/cogvideox-2b.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">CogVideoX-2B</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/cogvideox-5b.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">CogVideoX-5B</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/latte-1.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Latte-1</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/ltx-video.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">LTX-Video</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/mochi-1-preview.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Mochi-1-Preview</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/modelscope.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">ModelScope</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/open-sora.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Open-Sora (v1.2)</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/opensora-plan.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Open-Sora-Plan (v1.3)</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/pyramid-flow.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Pyramid-Flow</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/vchitect.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Vchitect</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/videocrafter2.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">VideoCrafter-2</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/hunyuanvideo.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">HunyuanVideo</div>
+                    </td>
+                    
+                    <!-- 添加更多列... -->
+                </tr>
+                <!-- 添加更多行... -->
+            </table>
+            <div class="description">
+                The short video depicts a scene inside a medical facility, likely a hospital or a specialized clinic. The setting is a sterile, well-equipped room with various medical instruments and equipment. The focal point of the video is a complex medical device, possibly a heart-lung machine, used in cardiac surgeries. This device is covered with numerous tubes and wires, indicating its critical role in supporting the patient's circulatory and respiratory functions during surgery. Two medical professionals, dressed in surgical scrubs and masks, are seen working with the machine. One of them is actively adjusting or monitoring the device, while the other observes and possibly assists. The room is filled with various medical supplies, monitors, and other equipment essential for the procedure. The monitors display vital signs and other critical information, ensuring that the patient's condition is continuously monitored. The overall atmosphere is one of precision and care, highlighting the complexity and critical nature of the medical procedure being performed. The presence of advanced medical technology and the focused efforts of the medical staff underscore the seriousness and professionalism of the setting.
+            </div>
+        </div>
+
+        <!-- 第三页 -->
+        <div class="page" id="page3">
+            <table>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/Allergo.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Allergo</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/cogvideox-2b.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">CogVideoX-2B</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/cogvideox-5b.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">CogVideoX-5B</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/latte-1.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Latte-1</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/ltx-video.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">LTX-Video</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/mochi-1-preview.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Mochi-1-Preview</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/modelscope.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">ModelScope</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/open-sora.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Open-Sora (v1.2)</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/opensora-plan.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Open-Sora-Plan (v1.3)</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/pyramid-flow.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Pyramid-Flow</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/vchitect.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Vchitect</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/videocrafter2.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">VideoCrafter-2</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/3/hunyuanvideo.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">HunyuanVideo</div>
+                    </td>
+                    
+                    <!-- 添加更多列... -->
+                </tr>
+                <!-- 添加更多行... -->
+            </table>
+            <div class="description">
+                The short video depicts a clinical setting where a healthcare professional is attending to a patient's knee. The patient is lying on an examination table, with their leg elevated and supported. The healthcare professional, dressed in a blue sweater and dark pants, is seen manipulating the patient's foot and ankle, likely to assess or treat a condition related to the knee. The professional is also handling a small medical device, possibly a laser or similar equipment, which is positioned near the patient's knee. The room is equipped with various medical and exercise equipment, indicating a rehabilitation or physical therapy environment. The focus is on the hands-on examination and treatment of the patient's knee, highlighting the careful and precise nature of the medical care being provided.
+            </div>
+        </div>
+            <!-- 第四行 -->
+            <div class="page" id="page4">
+                <table>
+                    <tr>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/Allergo.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Allergo</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/cogvideox-2b.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">CogVideoX-2B</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/cogvideox-5b.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">CogVideoX-5B</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/latte-1.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Latte-1</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/ltx-video.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">LTX-Video</div>
+                        </td>
+                        <!-- 添加更多列... -->
+                    </tr>
+                    <tr>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/mochi-1-preview.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Mochi-1-Preview</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/modelscope.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">ModelScope</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/open-sora.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Open-Sora (v1.2)</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/opensora-plan.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Open-Sora-Plan (v1.3)</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/pyramid-flow.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Pyramid-Flow</div>
+                        </td>
+                        <!-- 添加更多列... -->
+                    </tr>
+                    <tr>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/vchitect.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Vchitect</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/videocrafter2.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">VideoCrafter-2</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/4/hunyuanvideo.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">HunyuanVideo</div>
+                        </td>
+                        
+                        <!-- 添加更多列... -->
+                    </tr>
+                    <!-- 添加更多行... -->
+                </table>
+                <div class="description">
+                    The short video features a person seated in a chair, holding a model of a human heart. The individual is dressed in a black shirt and appears to be explaining or discussing aspects of heart anatomy or health. The setting is a calm, indoor environment with a neutral-colored wall, a potted plant on a table, and a piece of abstract art hanging on the wall. The person's gestures and the presence of the heart model suggest that the video is educational, likely focusing on topics related to heart health, anatomy, or medical conditions affecting the heart. The overall tone is informative and professional.
+                </div>
+            </div>
+            <!-- 第五行 -->
+            <div class="page" id="page5">
+                <table>
+                    <tr>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/Allergo.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Allergo</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/cogvideox-2b.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">CogVideoX-2B</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/cogvideox-5b.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">CogVideoX-5B</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/latte-1.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Latte-1</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/ltx-video.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">LTX-Video</div>
+                        </td>
+                        <!-- 添加更多列... -->
+                    </tr>
+                    <tr>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/mochi-1-preview.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Mochi-1-Preview</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/modelscope.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">ModelScope</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/open-sora.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Open-Sora (v1.2)</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/opensora-plan.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Open-Sora-Plan (v1.3)</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/pyramid-flow.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Pyramid-Flow</div>
+                        </td>
+                        <!-- 添加更多列... -->
+                    </tr>
+                    <tr>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/vchitect.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">Vchitect</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/videocrafter2.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">VideoCrafter-2</div>
+                        </td>
+                        <td class="video-cell">
+                            <video controls>
+                                <source src="assets/slide_videos_all/5/hunyuanvideo.mp4" type="video/mp4">
+                            </video>
+                            <div class="word">HunyuanVideo</div>
+                        </td>
+                        
+                        <!-- 添加更多列... -->
+                    </tr>
+                    <!-- 添加更多行... -->
+                </table>
+                <div class="description">
+                    The short video depicts a medical procedure involving the administration of an injection. The scene is focused on a specific area of the skin, which appears to be a localized swelling or lesion. The individual performing the procedure is wearing blue medical gloves, ensuring a sterile environment.  A syringe is being used to inject a substance into the affected area. The needle is carefully inserted into the skin, and the syringe is gradually filled with a liquid, likely a medication or anesthetic. The procedure is conducted with precision, and the area around the injection site shows signs of inflammation or infection, indicated by redness and swelling. Throughout the video, the syringe is steadily inserted into the lesion, and the liquid is slowly administered. The close-up shots emphasize the careful technique and the medical nature of the procedure, highlighting the importance of precision and care in handling such conditions.
+                </div>
+            </div>
+        <!-- 第六行 -->
+        <div class="page" id="page6">
+            <table>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/Allergo.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Allergo</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/cogvideox-2b.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">CogVideoX-2B</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/cogvideox-5b.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">CogVideoX-5B</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/latte-1.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Latte-1</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/ltx-video.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">LTX-Video</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/mochi-1-preview.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Mochi-1-Preview</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/modelscope.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">ModelScope</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/open-sora.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Open-Sora (v1.2)</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/opensora-plan.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Open-Sora-Plan (v1.3)</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/pyramid-flow.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Pyramid-Flow</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/vchitect.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Vchitect</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/videocrafter2.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">VideoCrafter-2</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/6/hunyuanvideo.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">HunyuanVideo</div>
+                    </td>
+                    
+                    <!-- 添加更多列... -->
+                </tr>
+                <!-- 添加更多行... -->
+            </table>
+            <div class="description">
+                The short video appears to depict a medical procedure involving the use of ultrasound imaging. The video shows a close-up of an ultrasound monitor displaying real-time imaging of internal body structures. The monitor is equipped with various settings and parameters, such as frequency (12.5 MHz), gain, and depth, which are adjusted to capture clear images. The ultrasound images reveal layers of tissue, likely muscles or other soft tissues, as indicated by the striated patterns visible on the screen. The video does not show any external medical equipment or personnel, focusing solely on the ultrasound screen and the images it displays. The setting appears to be a clinical environment, possibly a hospital or a medical facility, as suggested by the presence of medical equipment and the professional setup. The video does not provide any additional context or explanation beyond the visual display of the ultrasound images.
+            </div>
+        </div>
+        <!-- 第七行 -->
+        <div class="page" id="page7">
+            <table>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/Allergo.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Allergo</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/cogvideox-2b.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">CogVideoX-2B</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/cogvideox-5b.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">CogVideoX-5B</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/latte-1.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Latte-1</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/ltx-video.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">LTX-Video</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/mochi-1-preview.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Mochi-1-Preview</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/modelscope.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">ModelScope</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/open-sora.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Open-Sora (v1.2)</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/opensora-plan.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Open-Sora-Plan (v1.3)</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/pyramid-flow.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Pyramid-Flow</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <tr>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/vchitect.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">Vchitect</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/videocrafter2.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">VideoCrafter-2</div>
+                    </td>
+                    <td class="video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/7/hunyuanvideo.mp4" type="video/mp4">
+                        </video>
+                        <div class="word">HunyuanVideo</div>
+                    </td>
+                    
+                    <!-- 添加更多列... -->
+                </tr>
+                <!-- 添加更多行... -->
+            </table>
+            <div class="description">
+                The short video depicts a surgical procedure focused on the eye, specifically involving the scleral region. The scene is highly magnified, showing a close-up of the eye with various surgical instruments in use. The sclera, or white part of the eye, appears to be the primary area of focus, with visible blood and incisions. Throughout the video, the surgeon is seen making precise incisions and manipulating the scleral tissue. The surgical instruments include forceps and scissors, which are used to hold and cut through the tissue. The scleral pocket is being dissected, and relaxing incisions are being placed on either edge of the incision site. The surgeon carefully manages the tissue, ensuring that the pocket is adequately formed and the incisions are correctly placed. The video provides a detailed view of the meticulous steps involved in this surgical technique, highlighting the precision and care required in such procedures. The presence of blood and the use of specialized surgical tools are evident, emphasizing the complexity and technical nature of the operation.
+            </div>
+        </div>
+
+        <button class="nav-button prev" onclick="changePage(-1)">←</button>
+        <button class="nav-button next" onclick="changePage(1)">→</button>
+
+        <!-- 添加页码指示器 -->
+        <div class="page-indicators" id="pageIndicators"></div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 7; // 总页数
+        let autoPlayInterval; // 自动播放计时器
+
+        // 初始化页码指示器
+        function initializePageIndicators() {
+            const indicatorsContainer = document.getElementById('pageIndicators');
+            for (let i = 1; i <= totalPages; i++) {
+                const indicator = document.createElement('span');
+                indicator.className = `indicator ${i === 1 ? 'active' : ''}`;
+                indicator.onclick = () => goToPage(i);
+                indicatorsContainer.appendChild(indicator);
+            }
+        }
+
+        // 更新页码指示器
+        function updatePageIndicators() {
+            const indicators = document.getElementsByClassName('indicator');
+            for (let i = 0; i < indicators.length; i++) {
+                indicators[i].classList.remove('active');
+            }
+            indicators[currentPage - 1].classList.add('active');
+        }
+
+        // 切换到指定页面
+        function goToPage(pageNumber) {
+            document.getElementById(`page${currentPage}`).classList.remove('active');
+            currentPage = pageNumber;
+            document.getElementById(`page${currentPage}`).classList.add('active');
+            updatePageIndicators();
+            resetAutoPlay(); // 重置自动播放计时器
+        }
+
+        // 切换页面
+        function changePage(direction) {
+            let newPage = currentPage + direction;
+            
+            // 循环逻辑
+            if (newPage > totalPages) {
+                newPage = 1;
+            } else if (newPage < 1) {
+                newPage = totalPages;
+            }
+            
+            goToPage(newPage);
+        }
+
+        // 自动播放
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                changePage(1);
+            }, 50000000); // 每5秒切换一次
+        }
+
+        // 重置自动播放
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        // 初始化
+        initializePageIndicators();
+        startAutoPlay();
+
+        // 鼠标悬停时暂停自动播放
+        document.querySelector('.container').addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+
+        // 鼠标离开时恢复自动播放
+        document.querySelector('.container').addEventListener('mouseleave', () => {
+            startAutoPlay();
+        });
+
+        // 键盘控制
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                changePage(-1);
+            } else if (e.key === 'ArrowRight') {
+                changePage(1);
+            }
+        });
+    </script>
+		<!-- 轮播结束 -->
 
 	</div>
 </div>
