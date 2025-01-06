@@ -117,6 +117,101 @@
             background-color: #666;
         }
     </style>
+
+    <style>
+        .vgc_container {
+            position: relative;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border: none;
+        }
+
+        .vgc_video-cell {
+            width: 20%;
+        }
+
+        video {
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .vgc_word {
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .vgc_description {
+            margin-top: 20px;
+            text-align: justify;
+            padding: 20px;
+        }
+
+        .vgc_nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 15px;
+            cursor: pointer;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .vgc_nav-button:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .vgc_prev {
+            left: -50px;
+        }
+
+        .vgc_next {
+            right: -50px;
+        }
+
+        .vgc_page {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .vgc_active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* 添加页码指示器样式 */
+        .vgc_page-indicators {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .vgc_indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .vgc_indicator.vgc_active {
+            background-color: #666;
+        }
+    </style>
 </head>
 
 
@@ -175,7 +270,183 @@
 </div>
 
 <div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded" style="width: 100%;">
-	<p>测试</p>
+	<div class="vgc_container">
+        <!-- 第一页 -->
+        <div class="vgc_page vgc_active" id="vgc_page1">
+            <table>
+                <tr>
+                    <td class="vgc_video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/Allergo.mp4" type="video/mp4">
+                        </video>
+                        <div class="vgc_word">Allergo</div>
+                    </td>
+                    <td class="vgc_video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/cogvideox-2b.mp4" type="video/mp4">
+                        </video>
+                        <div class="vgc_word">CogVideoX-2B</div>
+                    </td>
+                    <td class="vgc_video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/cogvideox-5b.mp4" type="video/mp4">
+                        </video>
+                        <div class="vgc_word">CogVideoX-5B</div>
+                    </td>
+                    <td class="vgc_video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/latte-1.mp4" type="video/mp4">
+                        </video>
+                        <div class="vgc_word">Latte-1</div>
+                    </td>
+                    <td class="vgc_video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/1/ltx-video.mp4" type="video/mp4">
+                        </video>
+                        <div class="vgc_word">LTX-Video</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <!-- 添加更多行... -->
+            </table>
+            <div class="vgc_description">
+                <p style="color: red;">Please turn on the sound.</p>
+            </div>
+        </div>
+        <!-- 第二页 -->
+        <div class="vgc_page" id="vgc_page2">
+            <table>
+                <tr>
+                    <td class="vgc_video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/Allergo.mp4" type="video/mp4">
+                        </video>
+                        <div class="vgc_word">Allergo</div>
+                    </td>
+                    <td class="vgc_video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/cogvideox-2b.mp4" type="video/mp4">
+                        </video>
+                        <div class="vgc_word">CogVideoX-2B</div>
+                    </td>
+                    <td class="vgc_video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/cogvideox-5b.mp4" type="video/mp4">
+                        </video>
+                        <div class="vgc_word">CogVideoX-5B</div>
+                    </td>
+                    <td class="vgc_video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/latte-1.mp4" type="video/mp4">
+                        </video>
+                        <div class="vgc_word">Latte-1</div>
+                    </td>
+                    <td class="vgc_video-cell">
+                        <video controls>
+                            <source src="assets/slide_videos_all/2/ltx-video.mp4" type="video/mp4">
+                        </video>
+                        <div class="vgc_word">LTX-Video</div>
+                    </td>
+                    <!-- 添加更多列... -->
+                </tr>
+                <!-- 添加更多行... -->
+            </table>
+            <div class="vgc_description">
+                <p style="color: red;">Please turn on the sound.</p>
+            </div>
+        </div>
+
+        <button class="vgc_nav-button vgc_prev" onclick="vgc_changePage(-1)">←</button>
+        <button class="vgc_nav-button vgc_next" onclick="vgc_changePage(1)">→</button>
+
+        <!-- 添加页码指示器 -->
+        <div class="vgc_page-indicators" id="vgc_pageIndicators"></div>
+    </div>
+
+    <script>
+        let vgc_currentPage = 1;
+        const vgc_totalPages = 2; // 总页数
+        let vgc_autoPlayInterval; // 自动播放计时器
+
+        // 初始化页码指示器
+        function vgc_initializePageIndicators() {
+            const indicatorsContainer = document.getElementById('vgc_pageIndicators');
+            for (let i = 1; i <= vgc_totalPages; i++) {
+                const indicator = document.createElement('span');
+                indicator.className = `vgc_indicator ${i === 1 ? 'vgc_active' : ''}`;
+                indicator.onclick = () => vgc_goToPage(i);
+                indicatorsContainer.appendChild(indicator);
+            }
+        }
+
+        // 更新页码指示器
+        function vgc_updatePageIndicators() {
+            const indicators = document.getElementsByClassName('vgc_indicator');
+            for (let i = 0; i < indicators.length; i++) {
+                indicators[i].classList.remove('vgc_active');
+            }
+            indicators[vgc_currentPage - 1].classList.add('vgc_active');
+        }
+
+        // 切换到指定页面
+        function vgc_goToPage(pageNumber) {
+            document.getElementById(`vgc_page${vgc_currentPage}`).classList.remove('vgc_active');
+            vgc_currentPage = pageNumber;
+            document.getElementById(`vgc_page${vgc_currentPage}`).classList.add('vgc_active');
+            vgc_updatePageIndicators();
+            vgc_resetAutoPlay(); // 重置自动播放计时器
+        }
+
+        // 切换页面
+        function vgc_changePage(direction) {
+            let newPage = vgc_currentPage + direction;
+
+            // 循环逻辑
+            if (newPage > vgc_totalPages) {
+                newPage = 1;
+            } else if (newPage < 1) {
+                newPage = vgc_totalPages;
+            }
+
+            vgc_goToPage(newPage);
+        }
+
+        // 自动播放
+        function vgc_startAutoPlay() {
+            vgc_autoPlayInterval = setInterval(() => {
+                vgc_changePage(1);
+            }, 5000); // 每5秒切换一次
+        }
+
+        // 重置自动播放
+        function vgc_resetAutoPlay() {
+            clearInterval(vgc_autoPlayInterval);
+            vgc_startAutoPlay();
+        }
+
+        // 初始化
+        vgc_initializePageIndicators();
+        vgc_startAutoPlay();
+
+        // 鼠标悬停时暂停自动播放
+        document.querySelector('.vgc_container').addEventListener('mouseenter', () => {
+            clearInterval(vgc_autoPlayInterval);
+        });
+
+        // 鼠标离开时恢复自动播放
+        document.querySelector('.vgc_container').addEventListener('mouseleave', () => {
+            vgc_startAutoPlay();
+        });
+
+        // 键盘控制
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                vgc_changePage(-1);
+            } else if (e.key === 'ArrowRight') {
+                vgc_changePage(1);
+            }
+        });
+    </script>
 </div>
 
 <div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
