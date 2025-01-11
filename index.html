@@ -465,7 +465,7 @@
 	<h2 id="Main Results" style="text-align: center;">Main Results</h2>
 
 	<h3 id="Videoscore" style="text-align: left;">Videoscore</h3>
-		<p>VideoScore is an end-to-end video generation evaluation framework trained on the carefully curated VideoFeedback dataset. It comprehensively evaluates videos across five key dimensions: visual quality, temporal consistency, dynamic degree, text-to-video alignment, and factual consistency. In multiple benchmark tests, VideoScore significantly outperforms baseline models such as GPT-4 and Gemini 1.5. As an automated video evaluation tool, VideoScore not only accurately assesses video quality but also effectively simulates human feedback on generated videos. Although many models achieve high image quality, they often suffer from noticeable distortions. Therefore, we also evaluate the Distortion Rate, which is determined through human assessment.</p>
+		<p>VideoScore is an end-to-end video generation evaluation framework trained on the carefully curated VideoFeedback dataset. It comprehensively evaluates videos across five key dimensions: visual quality, temporal consistency, dynamic degree, text-to-video alignment, and factual consistency. In multiple benchmark tests, VideoScore significantly outperforms baseline models such as GPT-4 and Gemini 1.5. As an automated video evaluation tool, VideoScore not only accurately assesses video quality but also effectively simulates human feedback on generated videos. Although many models achieve high image quality, they often suffer from noticeable distortions. Therefore, we also evaluate the <b>Distortion Rate</b>, which is determined through human assessment.</p>
 		<div class="table-responsive pt-3">
 			<style>
 			  .comparison-table {
@@ -532,6 +532,7 @@
 			<table class="comparison-table">
 			  <tr>
 			    <th>Model</th>
+			    <th>Total Score</th>
 			    <th>Visual Quality ↑</th>
 			    <th>Temporal Consistency ↑</th>
 			    <th>Dynamic Degree ↑</th>
@@ -545,6 +546,7 @@
 			  <tr>
 			    <td class="model-name">CogVideoX-2B</td>
 			    <td>3.35</td>
+			    <td>2.77</td>
 			    <td>3.21</td>
 			    <td>3.36</td>
 			    <td>3.13</td>
@@ -554,6 +556,7 @@
 			  <tr>
 			    <td class="model-name">CogVideoX-5B</td>
 			    <td>3.30</td>
+			    <td>2.78</td>
 			    <td>3.13</td>
 			    <td>3.33</td>
 			    <td>3.07</td>
@@ -563,6 +566,7 @@
 			  <tr>
 			    <td class="model-name">Open Sora (v1.2)</td>
 			    <td>3.21</td>
+			    <td>2.57</td>
 			    <td>3.04</td>
 			    <td>3.24</td>
 			    <td>2.97</td>
@@ -572,6 +576,7 @@
 			  <tr>
 			    <td class="model-name">Open Sora Plan (v1.3)</td>
 			    <td>3.39</td>
+			    <td>2.76</td>
 			    <td>3.29</td>
 			    <td>3.32</td>
 			    <td>3.13</td>
@@ -581,6 +586,7 @@
 			  <tr>
 			    <td class="model-name">VideoCrafter-2</td>
 			    <td>2.91</td>
+			    <td>2.39</td>
 			    <td>2.78</td>
 			    <td>3.10</td>
 			    <td>2.80</td>
@@ -590,6 +596,7 @@
 			  <tr>
 			    <td class="model-name">ModelScope</td>
 			    <td>2.86</td>
+		            <td>2.34</td>
 			    <td>2.72</td>
 			    <td>3.10</td>
 			    <td>2.77</td>
@@ -599,6 +606,7 @@
 			  <tr>
 			    <td class="model-name">Latte-1</td>
 			    <td>3.08</td>
+			    <td>2.48</td>
 			    <td>2.87</td>
 			    <td>3.17</td>
 			    <td>2.91</td>
@@ -608,6 +616,7 @@
 			  <tr>
 			    <td class="model-name">Vchitect-2.0</td>
 			    <td>2.94</td>
+		            <td>2.40</td>
 			    <td>2.80</td>
 			    <td>3.14</td>
 			    <td>2.82</td>
@@ -617,6 +626,7 @@
 			  <tr>
 			    <td class="model-name">Pyramid-Flow</td>
 			    <td>2.87</td>
+			    <td>2.35</td>
 			    <td>2.74</td>
 			    <td>3.08</td>
 			    <td>2.76</td>
@@ -626,6 +636,7 @@
 			  <tr>
 			    <td class="model-name">Allegro</td>
 			    <td>3.28</td>
+			    <td>2.62</td>
 			    <td>3.12</td>
 			    <td>3.17</td>
 			    <td>2.82</td>
@@ -635,6 +646,7 @@
 			  <tr>
 			    <td class="model-name">Mochi-1-preview</td>
 			    <td>3.03</td>
+			    <td>2.54</td>
 			    <td>2.84</td>
 			    <td>3.13</td>
 			    <td>2.84</td>
@@ -644,6 +656,7 @@
 			  <tr>
 			    <td class="model-name">LTX-Video</td>
 			    <td>3.01</td>
+			    <td>2.41</td>
 			    <td>2.83</td>
 			    <td>3.10</td>
 			    <td>2.83</td>
@@ -653,6 +666,7 @@
 			  <tr>
 			    <td class="model-name">HunyuanVideo</td>
 			    <td>3.16</td>
+			    <td>2.85</td>
 			    <td>3.01</td>
 			    <td>3.02</td>
 			    <td>2.82</td>
@@ -665,6 +679,7 @@
 			  <tr>
 			    <td class="model-name">Hailuo (video-01)</td>
 			    <td>2.99</td>
+			    <td>2.73</td>
 			    <td>2.94</td>
 			    <td>2.71</td>
 			    <td>2.63</td>
@@ -674,6 +689,7 @@
 			  <tr>
 			    <td class="model-name">Pika (v2.0)</td>
 			    <td>2.80</td>
+			    <td>2.57</td>
 			    <td>2.85</td>
 			    <td>2.33</td>
 			    <td>2.53</td>
@@ -691,16 +707,18 @@
 			    <td>-</td>
 			    <td>-</td>
 			    <td>-</td>
+			    <td>-</td>
 			  </tr>
 			</table>
 		</div>
 	
 		<h3 id="VBench" style="text-align: left;">VBench</h3>
-		<p>To evaluate the performance of text-to-video generation, we adopted multiple evaluation metrics that align with human perception, which are also used in Vbench. These include: (1) <b>Subject Consistency</b>, to assess the consistency of the video's subject appearance; (2) <b>Background Consistency</b>, to evaluate the temporal consistency of the video's background; (3) <b>Motion Smoothness</b>, to measure the smoothness of the generated motion; (4) <b>Dynamic Degree</b>, to assess whether the video contains large-scale movements; (5) <b>Aesthetic Quality</b>, to evaluate the aesthetic quality of the video (aesthetic scoring can be ignored for medical videos); and (6) <b>Imaging Quality</b>, to assess the overall imaging quality of the video. Although many models achieve high image quality, they often suffer from noticeable distortions. Therefore, we also evaluate the <b>Distortion Rate</b>, which is determined through human assessment.</p>
+		<p>To evaluate the performance of text-to-video generation, we adopted multiple evaluation metrics that align with human perception, which are also used in Vbench. These include: (1) <b>Subject Consistency</b>, to assess the consistency of the video's subject appearance; (2) <b>Background Consistency</b>, to evaluate the temporal consistency of the video's background; (3) <b>Motion Smoothness</b>, to measure the smoothness of the generated motion; (4) <b>Dynamic Degree</b>, to assess whether the video contains large-scale movements; (5) <b>Aesthetic Quality</b>, to evaluate the aesthetic quality of the video (aesthetic scoring can be ignored for medical videos); and (6) <b>Imaging Quality</b>, to assess the overall imaging quality of the video. Although many models achieve high image quality, they often suffer from noticeable distortions. Therefore, we also evaluate the <b>Distortion Rate</b>, which is determined through human assessment. The medical video usually lacks aesthetic appeal, so we omitted it in the calculation of the average score.</p>
 		<div class="table-responsive pt-3">
 		<table class="comparison-table">
 		  <tr>
 		    <th>Model</th>
+		    <th>Average Score</th>
 		    <th>Subject Consistency ↑</th>
 		    <th>Background Consistency ↑</th>
 		    <th>Motion Smoothness ↑</th>
@@ -715,6 +733,7 @@
 		  <tr>
 		    <td class="model-name">CogVideoX-2B</td>
 		    <td>94.03</td>
+		    <td>71.97</td>
 		    <td>95.01</td>
 		    <td>98.04</td>
 		    <td>71.50</td>
@@ -725,6 +744,7 @@
 		  <tr>
 		    <td class="model-name">CogVideoX-5B</td>
 		    <td>93.92</td>
+		    <td>71.2</td>
 		    <td>96.04</td>
 		    <td>98.13</td>
 		    <td>63.00</td>
@@ -735,6 +755,7 @@
 		  <tr>
 		    <td class="model-name">Open Sora (v1.2)</td>
 		    <td>95.40</td>
+		    <td>63.77</td>
 		    <td>96.46</td>
 		    <td>99.40</td>
 		    <td>26.00</td>
@@ -745,6 +766,7 @@
 		  <tr>
 		    <td class="model-name">Open Sora Plan (v1.3)</td>
 		    <td>97.08</td>
+		    <td>65.06</td>
 		    <td>97.38</td>
 		    <td>99.33</td>
 		    <td>22.00</td>
@@ -755,6 +777,7 @@
 		  <tr>
 		    <td class="model-name">VideoCrafter-2</td>
 		    <td>98.13</td>
+		    <td>65.27</td>
 		    <td>98.42</td>
 		    <td>98.53</td>
 		    <td>23.00</td>
@@ -765,6 +788,7 @@
 		  <tr>
 		    <td class="model-name">ModelScope</td>
 		    <td>92.99</td>
+		    <td>65.86</td>
 		    <td>96.24</td>
 		    <td>96.43</td>
 		    <td>45.50</td>
@@ -775,6 +799,7 @@
 		  <tr>
 		    <td class="model-name">Latte-1</td>
 		    <td>96.41</td>
+		    <td>68.52</td>
 		    <td>96.75</td>
 		    <td>98.09</td>
 		    <td>47.50</td>
@@ -785,6 +810,7 @@
 		  <tr>
 		    <td class="model-name">Vchitect-2.0</td>
 		    <td>88.07</td>
+		    <td>69.83</td>
 		    <td>93.50</td>
 		    <td>93.89</td>
 		    <td>80.00</td>
@@ -795,6 +821,7 @@
 		  <tr>
 		    <td class="model-name">Pyramid-Flow</td>
 		    <td>91.54</td>
+		    <td>66.85</td>
 		    <td>94.75</td>
 		    <td>99.38</td>
 		    <td>46.50</td>
@@ -805,6 +832,7 @@
 		  <tr>
 		    <td class="model-name">Allegro</td>
 		    <td>92.96</td>
+		    <td>69.23</td>
 		    <td>95.16</td>
 		    <td>99.01</td>
 		    <td>49.50</td>
@@ -815,6 +843,7 @@
 		  <tr>
 		    <td class="model-name">Mochi-1-preview</td>
 		    <td>92.51</td>
+		    <td>72.76</td>
 		    <td>94.60</td>
 		    <td>99.08</td>
 		    <td>77.50</td>
@@ -825,6 +854,7 @@
 		  <tr>
 		    <td class="model-name">LTX-Video</td>
 		    <td>97.44</td>
+		    <td>59.95</td>
 		    <td>95.82</td>
 		    <td>99.60</td>
 		    <td>4.97</td>
@@ -835,6 +865,7 @@
 		  <tr>
 		    <td class="model-name">HunyuanVideo</td>
 		    <td>91.47</td>
+	            <td>78.39</td>
 		    <td>95.82</td>
 		    <td>99.20</td>
 		    <td>63.00</td>
@@ -848,6 +879,7 @@
 		  <tr>
 		    <td class="model-name">Hailuo (video-01)</td>
 		    <td>94.55</td>
+		    <td>79.54</td>
 		    <td>95.24</td>
 		    <td>99.35</td>
 		    <td>60.51</td>
@@ -858,6 +890,7 @@
 		  <tr>
 		    <td class="model-name">Pika (v2.0)</td>
 		    <td>97.59</td>
+		    <td>73.11</td>
 		    <td>97.26</td>
 		    <td>99.57</td>
 		    <td>16.92</td>
@@ -870,6 +903,7 @@
 		  </tr>
 		  <tr>
 		    <td class="model-name"><strong>Medical Sora (ours)</strong></td>
+		    <td>-</td>
 		    <td>-</td>
 		    <td>-</td>
 		    <td>-</td>
