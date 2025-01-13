@@ -1777,35 +1777,63 @@
 	<h3 id="Synthetic Medical Video Data for Enhancing Supervised Models" style="text-align: left;">Synthetic Medical Video Data for Enhancing Supervised Models</h3>
 	<h4 id="Medical Video Classification" style="text-align: left;">Medical Video Classification</h4>
 
-	<table class="comparison-table">
-	  <tr>
-	    <th></th>
-	    <th>Accuracy</th>
-	    <th>Precision</th>
-	    <th>Recall</th>
-	    <th>F1-score</th>
-	  </tr>
-	  <tr>
-	    <td class="model-name">D<sub>ori</sub></td>
-	    <td>49.62</td>
-	    <td>60.80</td>
-	    <td>52.45</td>
-	    <td>48.02</td>
-	  </tr>
-	 <tr>
-	    <td class="model-name">D<sub>gen</sub></td>
-	    <td>-</td>
-	    <td>-</td>
-	    <td>-</td>
-	    <td>-</td>
-	  </tr>
-	 <tr>
-	    <td class="model-name">D<sub>ori</sub>+D<sub>gen</sub></td>
-	    <td>-</td>
-	    <td>-</td>
-	    <td>-</td>
-	    <td>-</td>
-	  </tr>
+	<style>
+	.metrics-comparison-table {
+	    width: 100%;
+	    border-collapse: collapse;
+	}
+	.metrics-table-cell, .metrics-table-header {
+	    border: 1px solid #fff;
+	    padding: 8px;
+	    text-align: center;
+	}
+	.table-border-top {
+	    border-top: 2px solid black;
+	}
+	.table-border-bottom {
+	    border-bottom: 2px solid black;
+	}
+	.header-border-bottom {
+	    border-bottom: 2px solid black;
+	}
+	.cell-no-border {
+	    border: none;
+	}
+	.model-identifier {
+	    text-align: left;
+	    font-weight: bold;
+	}
+    </style>
+
+	<table class="metrics-comparison-table">
+	    <tr class="table-border-top">
+	        <th class="metrics-table-header header-border-bottom cell-no-border"></th>
+	        <th class="metrics-table-header header-border-bottom">Accuracy</th>
+	        <th class="metrics-table-header header-border-bottom">Precision</th>
+	        <th class="metrics-table-header header-border-bottom">Recall</th>
+	        <th class="metrics-table-header header-border-bottom">F1-score</th>
+	    </tr>
+	    <tr>
+	        <td class="metrics-table-cell model-identifier">D<sub>ori</sub></td>
+	        <td class="metrics-table-cell">49.62</td>
+	        <td class="metrics-table-cell">60.80</td>
+	        <td class="metrics-table-cell">52.45</td>
+	        <td class="metrics-table-cell">48.02</td>
+	    </tr>
+	    <tr>
+	        <td class="metrics-table-cell model-identifier">D<sub>gen</sub></td>
+	        <td class="metrics-table-cell">-</td>
+	        <td class="metrics-table-cell">-</td>
+	        <td class="metrics-table-cell">-</td>
+	        <td class="metrics-table-cell">-</td>
+	    </tr>
+	    <tr class="table-border-bottom">
+	        <td class="metrics-table-cell model-identifier table-border-bottom">D<sub>ori</sub>+D<sub>gen</sub></td>
+	        <td class="metrics-table-cell table-border-bottom">-</td>
+	        <td class="metrics-table-cell table-border-bottom">-</td>
+	        <td class="metrics-table-cell table-border-bottom">-</td>
+	        <td class="metrics-table-cell table-border-bottom">-</td>
+	    </tr>
 	</table>
 
 	<h4 id="Medical Surgical Operations and Disease Classification" style="text-align: left;">Medical Surgical Operations and Disease Classification</h4>
