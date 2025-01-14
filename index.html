@@ -1983,6 +1983,87 @@
     </table>
 </div>
 	<h3 id="Patient Portrait Driven by Patient Health Record" style="text-align: left;">Patient Portrait Driven by Patient Health Record</h3>
+	<style>
+        .patient-video-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .patient-video-container figure {
+            width: 18%; /* 每个视频占据18%的宽度，留出一些间距 */
+            margin: 0; /* 去除默认的 margin */
+        }
+        .patient-video-container video {
+            width: 100%; /* 视频宽度填满父容器 */
+        }
+        .patient-video-container figcaption {
+            text-align: center; /* 标题居中 */
+            margin-top: 8px; /* 标题与视频之间的间距 */
+            font-size: 14px; /* 标题字体大小 */
+            color: #333; /* 标题颜色 */
+        }
+        .patient-video-container details {
+            margin-top: 8px; /* 折叠标题与视频之间的间距 */
+        }
+        .patient-video-container summary {
+            cursor: pointer; /* 鼠标悬停时显示手型 */
+            text-align: center; /* 标题居中 */
+            font-size: 14px; /* 标题字体大小 */
+            color: #333; /* 标题颜色 */
+        }
+    </style>
+
+	<div class="patient-video-container">
+    <figure>
+        <video controls>
+            <source src="assets/patient_videos/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <details>
+            <summary>Video 1</summary>
+            <figcaption>纯白色背景，一个全身的男人物，表现的是肚子疼，他脸上表现的很难受</figcaption>
+        </details>
+    </figure>
+    <figure>
+        <video controls>
+            <source src="assets/patient_videos/2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <details>
+            <summary>Video 2</summary>
+            <figcaption>纯白色背景，一个全身的孕妇，表现是肚子疼，她脸上表现很难受</figcaption>
+        </details>
+    </figure>
+    <figure>
+        <video controls>
+            <source src="assets/patient_videos/3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <details>
+            <summary>Video 3</summary>
+            <figcaption>纯白色背景，半身的老太太，表现是头疼，她一只手摸自己的头，表现的很难受</figcaption>
+        </details>
+    </figure>
+    <figure>
+        <video controls>
+            <source src="assets/patient_videos/4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <details>
+            <summary>Video 4</summary>
+            <figcaption>纯白色背景，年轻人，咳嗽，脸部微微发红</figcaption>
+        </details>
+    </figure>
+    <figure>
+        <video controls>
+            <source src="assets/patient_videos/5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <details>
+            <summary>Video 5</summary>
+            <figcaption>纯白色背景，婴儿，脸部出现很多红色痘痘</figcaption>
+        </details>
+    </figure>
+</div>
 	
 
 <script>
