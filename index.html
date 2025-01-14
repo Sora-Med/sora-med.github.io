@@ -1778,31 +1778,60 @@
 	<h4 id="Medical Video Classification" style="text-align: left;">Medical Video Classification</h4>
 	<p>MedVidCL</p>
 	<style>
-	.metrics-comparison-table {
-	    width: 100%;
-	    border-collapse: collapse;
-	}
-	.metrics-table-cell, .metrics-table-header {
-	    border: 1px solid #fff;
-	    padding: 8px;
-	    text-align: center;
-	}
-	.table-border-top {
-	    border-top: 2px solid black;
-	}
-	.table-border-bottom {
-	    border-bottom: 2px solid black;
-	}
-	.header-border-bottom {
-	    border-bottom: 2px solid black;
-	}
-	.cell-no-border {
-	    border: none;
-	}
-	.model-identifier {
-	    text-align: left;
-	    font-weight: bold;
-	}
+        /* 你的原始样式 */
+        .metrics-comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .metrics-table-cell, .metrics-table-header {
+            border: 1px solid #fff;
+            padding: 8px;
+            text-align: center;
+        }
+        .table-border-top {
+            border-top: 2px solid black;
+        }
+        .table-border-bottom {
+            border-bottom: 2px solid black;
+        }
+        .header-border-bottom {
+            border-bottom: 2px solid black;
+        }
+        .cell-no-border {
+            border: none;
+        }
+        .model-identifier {
+            text-align: left;
+            font-weight: bold;
+        }
+
+        /* 新增的选项卡样式 */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #ccc;
+        }
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
     </style>
 
 	<table class="metrics-comparison-table">
@@ -1851,97 +1880,126 @@
 	</table>
 
 	<h4 id="Medical Surgical Operations and Disease Classification" style="text-align: left;">Medical Surgical Operations and Disease Classification</h4>
-	<p>SurgVisDom</p>
-	<table class="metrics-comparison-table">
-	    <tr class="table-border-top">
-	        <th class="metrics-table-header header-border-bottom cell-no-border"></th>
-	        <th class="metrics-table-header header-border-bottom">Accuracy</th>
-	        <th class="metrics-table-header header-border-bottom">Precision</th>
-	        <th class="metrics-table-header header-border-bottom">Recall</th>
-	        <th class="metrics-table-header header-border-bottom">F1-score</th>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>ori</sub></td>
-	        <td class="metrics-table-cell">50.00</td>
-	        <td class="metrics-table-cell">33.33</td>
-	        <td class="metrics-table-cell">50.00</td>
-	        <td class="metrics-table-cell">38.89</td>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>hunyuan_gen</sub></td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>medsora_gen</sub></td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>ori</sub>+D<sub>hunyuan_gen</sub></td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	    </tr>
-	    <tr class="table-border-bottom">
-	        <td class="metrics-table-cell model-identifier table-border-bottom">D<sub>ori</sub>+D<sub>medsora_gen</sub></td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	    </tr>
-	</table>
+	<!-- 选项卡按钮 -->
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'SurgVisDom')">SurgVisDom</button>
+    <button class="tablinks" onclick="openTab(event, 'HyperKvasir')">HyperKvasir</button>
+</div>
 
-	<p>HyperKvasir</p>
-	<table class="metrics-comparison-table">
-	    <tr class="table-border-top">
-	        <th class="metrics-table-header header-border-bottom cell-no-border"></th>
-	        <th class="metrics-table-header header-border-bottom">Accuracy</th>
-	        <th class="metrics-table-header header-border-bottom">Precision</th>
-	        <th class="metrics-table-header header-border-bottom">Recall</th>
-	        <th class="metrics-table-header header-border-bottom">F1-score</th>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>ori</sub></td>
-	        <td class="metrics-table-cell">40.00</td>
-	        <td class="metrics-table-cell">10.00</td>
-	        <td class="metrics-table-cell">25.00</td>
-	        <td class="metrics-table-cell">14.29</td>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>hunyuan_gen</sub></td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>medsora_gen</sub></td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>ori</sub>+D<sub>hunyuan_gen</sub></td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	    </tr>
-	    <tr class="table-border-bottom">
-	        <td class="metrics-table-cell model-identifier table-border-bottom">D<sub>ori</sub>+D<sub>medsora_gen</sub></td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	    </tr>
-	</table>
+<!-- SurgVisDom 表格 -->
+<div id="SurgVisDom" class="tabcontent">
+    <table class="metrics-comparison-table">
+        <tr class="table-border-top">
+            <th class="metrics-table-header header-border-bottom cell-no-border"></th>
+            <th class="metrics-table-header header-border-bottom">Accuracy</th>
+            <th class="metrics-table-header header-border-bottom">Precision</th>
+            <th class="metrics-table-header header-border-bottom">Recall</th>
+            <th class="metrics-table-header header-border-bottom">F1-score</th>
+        </tr>
+        <tr>
+            <td class="metrics-table-cell model-identifier">D<sub>ori</sub></td>
+            <td class="metrics-table-cell">50.00</td>
+            <td class="metrics-table-cell">33.33</td>
+            <td class="metrics-table-cell">50.00</td>
+            <td class="metrics-table-cell">38.89</td>
+        </tr>
+        <tr>
+            <td class="metrics-table-cell model-identifier">D<sub>hunyuan_gen</sub></td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+        </tr>
+        <tr>
+            <td class="metrics-table-cell model-identifier">D<sub>medsora_gen</sub></td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+        </tr>
+        <tr>
+            <td class="metrics-table-cell model-identifier">D<sub>ori</sub>+D<sub>hunyuan_gen</sub></td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+        </tr>
+        <tr class="table-border-bottom">
+            <td class="metrics-table-cell model-identifier table-border-bottom">D<sub>ori</sub>+D<sub>medsora_gen</sub></td>
+            <td class="metrics-table-cell table-border-bottom">-</td>
+            <td class="metrics-table-cell table-border-bottom">-</td>
+            <td class="metrics-table-cell table-border-bottom">-</td>
+            <td class="metrics-table-cell table-border-bottom">-</td>
+        </tr>
+    </table>
+</div>
+
+<!-- HyperKvasir 表格 -->
+<div id="HyperKvasir" class="tabcontent">
+    <table class="metrics-comparison-table">
+        <tr class="table-border-top">
+            <th class="metrics-table-header header-border-bottom cell-no-border"></th>
+            <th class="metrics-table-header header-border-bottom">Accuracy</th>
+            <th class="metrics-table-header header-border-bottom">Precision</th>
+            <th class="metrics-table-header header-border-bottom">Recall</th>
+            <th class="metrics-table-header header-border-bottom">F1-score</th>
+        </tr>
+        <tr>
+            <td class="metrics-table-cell model-identifier">D<sub>ori</sub></td>
+            <td class="metrics-table-cell">40.00</td>
+            <td class="metrics-table-cell">10.00</td>
+            <td class="metrics-table-cell">25.00</td>
+            <td class="metrics-table-cell">14.29</td>
+        </tr>
+        <tr>
+            <td class="metrics-table-cell model-identifier">D<sub>hunyuan_gen</sub></td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+        </tr>
+        <tr>
+            <td class="metrics-table-cell model-identifier">D<sub>medsora_gen</sub></td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+        </tr>
+        <tr>
+            <td class="metrics-table-cell model-identifier">D<sub>ori</sub>+D<sub>hunyuan_gen</sub></td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+            <td class="metrics-table-cell">-</td>
+        </tr>
+        <tr class="table-border-bottom">
+            <td class="metrics-table-cell model-identifier table-border-bottom">D<sub>ori</sub>+D<sub>medsora_gen</sub></td>
+            <td class="metrics-table-cell table-border-bottom">-</td>
+            <td class="metrics-table-cell table-border-bottom">-</td>
+            <td class="metrics-table-cell table-border-bottom">-</td>
+            <td class="metrics-table-cell table-border-bottom">-</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // 默认打开第一个选项卡
+    document.getElementsByClassName("tablinks")[0].click();
+</script>
 </div>
 
 <!-- <div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
