@@ -1851,97 +1851,153 @@
 	</table>
 
 	<h4 id="Medical Surgical Operations and Disease Classification" style="text-align: left;">Medical Surgical Operations and Disease Classification</h4>
-	<p>SurgVisDom</p>
-	<table class="metrics-comparison-table">
-	    <tr class="table-border-top">
-	        <th class="metrics-table-header header-border-bottom cell-no-border"></th>
-	        <th class="metrics-table-header header-border-bottom">Accuracy</th>
-	        <th class="metrics-table-header header-border-bottom">Precision</th>
-	        <th class="metrics-table-header header-border-bottom">Recall</th>
-	        <th class="metrics-table-header header-border-bottom">F1-score</th>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>ori</sub></td>
-	        <td class="metrics-table-cell">50.00</td>
-	        <td class="metrics-table-cell">33.33</td>
-	        <td class="metrics-table-cell">50.00</td>
-	        <td class="metrics-table-cell">38.89</td>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>hunyuan_gen</sub></td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>medsora_gen</sub></td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>ori</sub>+D<sub>hunyuan_gen</sub></td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	    </tr>
-	    <tr class="table-border-bottom">
-	        <td class="metrics-table-cell model-identifier table-border-bottom">D<sub>ori</sub>+D<sub>medsora_gen</sub></td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	    </tr>
-	</table>
+	<style>
+        /* Container for side-by-side tables */
+        .metrics-comparison-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; /* Adds space between tables */
+        }
 
-	<p>HyperKvasir</p>
-	<table class="metrics-comparison-table">
-	    <tr class="table-border-top">
-	        <th class="metrics-table-header header-border-bottom cell-no-border"></th>
-	        <th class="metrics-table-header header-border-bottom">Accuracy</th>
-	        <th class="metrics-table-header header-border-bottom">Precision</th>
-	        <th class="metrics-table-header header-border-bottom">Recall</th>
-	        <th class="metrics-table-header header-border-bottom">F1-score</th>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>ori</sub></td>
-	        <td class="metrics-table-cell">40.00</td>
-	        <td class="metrics-table-cell">10.00</td>
-	        <td class="metrics-table-cell">25.00</td>
-	        <td class="metrics-table-cell">14.29</td>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>hunyuan_gen</sub></td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>medsora_gen</sub></td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	    </tr>
-	    <tr>
-	        <td class="metrics-table-cell model-identifier">D<sub>ori</sub>+D<sub>hunyuan_gen</sub></td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	        <td class="metrics-table-cell">-</td>
-	    </tr>
-	    <tr class="table-border-bottom">
-	        <td class="metrics-table-cell model-identifier table-border-bottom">D<sub>ori</sub>+D<sub>medsora_gen</sub></td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	        <td class="metrics-table-cell table-border-bottom">-</td>
-	    </tr>
-	</table>
+        /* Table styling */
+        .metrics-comparison-table {
+            width: 48%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        /* Header and cell styling */
+        .metrics-comparison-table__header,
+        .metrics-comparison-table__cell {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+
+        /* Specific header styling */
+        .metrics-comparison-table__header--bottom-border {
+            border-bottom: 2px solid #000;
+        }
+
+        /* Specific cell styling */
+        .metrics-comparison-table__cell--no-border {
+            border: none;
+        }
+
+        /* Top border for the first row */
+        .metrics-comparison-table__row--top-border {
+            border-top: 2px solid #000;
+        }
+
+        /* Bottom border for the last row */
+        .metrics-comparison-table__row--bottom-border {
+            border-bottom: 2px solid #000;
+        }
+
+        /* Model identifier styling */
+        .metrics-comparison-table__model-identifier {
+            font-style: italic;
+        }
+    </style>
+	<div class="metrics-comparison-container">
+        <!-- SurgVisDom Table -->
+        <div>
+            <p>SurgVisDom</p>
+            <table class="metrics-comparison-table">
+                <tr class="metrics-comparison-table__row--top-border">
+                    <th class="metrics-comparison-table__header metrics-comparison-table__header--bottom-border metrics-comparison-table__cell--no-border"></th>
+                    <th class="metrics-comparison-table__header metrics-comparison-table__header--bottom-border">Accuracy</th>
+                    <th class="metrics-comparison-table__header metrics-comparison-table__header--bottom-border">Precision</th>
+                    <th class="metrics-comparison-table__header metrics-comparison-table__header--bottom-border">Recall</th>
+                    <th class="metrics-comparison-table__header metrics-comparison-table__header--bottom-border">F1-score</th>
+                </tr>
+                <tr>
+                    <td class="metrics-comparison-table__cell metrics-comparison-table__model-identifier">D<sub>ori</sub></td>
+                    <td class="metrics-comparison-table__cell">50.00</td>
+                    <td class="metrics-comparison-table__cell">33.33</td>
+                    <td class="metrics-comparison-table__cell">50.00</td>
+                    <td class="metrics-comparison-table__cell">38.89</td>
+                </tr>
+                <tr>
+                    <td class="metrics-comparison-table__cell metrics-comparison-table__model-identifier">D<sub>hunyuan_gen</sub></td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                </tr>
+                <tr>
+                    <td class="metrics-comparison-table__cell metrics-comparison-table__model-identifier">D<sub>medsora_gen</sub></td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                </tr>
+                <tr>
+                    <td class="metrics-comparison-table__cell metrics-comparison-table__model-identifier">D<sub>ori</sub>+D<sub>hunyuan_gen</sub></td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                </tr>
+                <tr class="metrics-comparison-table__row--bottom-border">
+                    <td class="metrics-comparison-table__cell metrics-comparison-table__model-identifier">D<sub>ori</sub>+D<sub>medsora_gen</sub></td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- HyperKvasir Table -->
+        <div>
+            <p>HyperKvasir</p>
+            <table class="metrics-comparison-table">
+                <tr class="metrics-comparison-table__row--top-border">
+                    <th class="metrics-comparison-table__header metrics-comparison-table__header--bottom-border metrics-comparison-table__cell--no-border"></th>
+                    <th class="metrics-comparison-table__header metrics-comparison-table__header--bottom-border">Accuracy</th>
+                    <th class="metrics-comparison-table__header metrics-comparison-table__header--bottom-border">Precision</th>
+                    <th class="metrics-comparison-table__header metrics-comparison-table__header--bottom-border">Recall</th>
+                    <th class="metrics-comparison-table__header metrics-comparison-table__header--bottom-border">F1-score</th>
+                </tr>
+                <tr>
+                    <td class="metrics-comparison-table__cell metrics-comparison-table__model-identifier">D<sub>ori</sub></td>
+                    <td class="metrics-comparison-table__cell">40.00</td>
+                    <td class="metrics-comparison-table__cell">10.00</td>
+                    <td class="metrics-comparison-table__cell">25.00</td>
+                    <td class="metrics-comparison-table__cell">14.29</td>
+                </tr>
+                <tr>
+                    <td class="metrics-comparison-table__cell metrics-comparison-table__model-identifier">D<sub>hunyuan_gen</sub></td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                </tr>
+                <tr>
+                    <td class="metrics-comparison-table__cell metrics-comparison-table__model-identifier">D<sub>medsora_gen</sub></td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                </tr>
+                <tr>
+                    <td class="metrics-comparison-table__cell metrics-comparison-table__model-identifier">D<sub>ori</sub>+D<sub>hunyuan_gen</sub></td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                </tr>
+                <tr class="metrics-comparison-table__row--bottom-border">
+                    <td class="metrics-comparison-table__cell metrics-comparison-table__model-identifier">D<sub>ori</sub>+D<sub>medsora_gen</sub></td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                    <td class="metrics-comparison-table__cell">-</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
 
 <!-- <div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
