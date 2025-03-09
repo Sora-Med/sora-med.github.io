@@ -472,8 +472,8 @@
 <div class="container pt-5 mt-5 shadow-lg p-5 mb-5 bg-white rounded">
 	<h2 id="Main Results" style="text-align: center;">Main Results</h2>
 
-	<h3 id="Videoscore" style="text-align: left;">Videoscore</h3>
-		<p>VideoScore is an end-to-end video generation evaluation framework trained on the carefully curated VideoFeedback dataset. It comprehensively evaluates videos across five key dimensions: visual quality, temporal consistency, dynamic degree, text-to-video alignment, and factual consistency. In multiple benchmark tests, VideoScore significantly outperforms baseline models such as GPT-4 and Gemini 1.5. As an automated video evaluation tool, VideoScore not only accurately assesses video quality but also effectively simulates human feedback on generated videos. Although many models achieve high image quality, they often suffer from noticeable distortions. Therefore, we also evaluate the <b>Distortion Rate</b>, which is determined through human assessment.</p>
+	<h3 id="Videoscore" style="text-align: left;">VideoScore</h3>
+		<p>VideoScore is an end-to-end video generation evaluation framework trained on the carefully curated VideoFeedback dataset. It comprehensively evaluates videos across five key dimensions: visual quality, temporal consistency, dynamic degree, text-to-video alignment, and factual consistency. In multiple benchmark tests, VideoScore significantly outperforms baseline models such as GPT-4 and Gemini 1.5. As an automated video evaluation tool, VideoScore not only accurately assesses video quality but also effectively simulates human feedback on generated videos. Although many models achieve high image quality, they often suffer from noticeable distortions. Therefore, we also evaluate the <b>Warping Error</b>, which is determined through human assessment.</p>
 		<div class="table-responsive pt-3">
 			<style>
 			  .comparison-table {
@@ -546,7 +546,7 @@
 			    <th>Dynamic Degree ↑</th>
 			    <th>Text-to-Video Alignment ↑</th>
 			    <th>Factual Consistency ↑</th>
-			    <th>Distortion Rate ↓</th>
+			    <th>Warping Error ↓</th>
 			  </tr>
 			  <tr>
 			    <td colspan="8" class="section-header">Open-source video generation model</td>
@@ -570,6 +570,16 @@
 			    <td>3.07</td>
 			    <td>3.03</td>
 			    <td>80.00</td>
+			  </tr>
+			  <tr>
+			    <td class="model-name">Wan2.1-T2V-1.3B</td>
+			    <td>2.69</td>
+			    <td>3.11</td>
+			    <td>2.89</td>
+			    <td>3.37</td>
+			    <td>2.99</td>
+			    <td>2.86</td>
+			    <td>77.50</td>
 			  </tr>
 			  <tr>
 			    <td class="model-name">Open Sora (v1.2)</td>
@@ -682,6 +692,16 @@
 			    <td>45.00</td>
 			  </tr>
 			  <tr>
+			    <td class="model-name">Wan2.1-T2V-14B</td>
+			    <td>2.78</td>
+			    <td>2.99</td>
+			    <td>2.77</td>
+			    <td>3.21</td>
+			    <td>2.93</td>
+			    <td>2.68</td>
+			    <td>50.00</td>
+			  </tr>
+			  <tr>
 			    <td colspan="8" class="section-header">Commercial video generation model</td>
 			  </tr>
 			  <tr>
@@ -705,6 +725,16 @@
 			    <td>42.29</td>
 			  </tr>
 			  <tr>
+			    <td class="model-name">Sora</td>
+			    <td>3.58</td>
+			    <td>3.97</td>
+			    <td>3.85</td>
+			    <td>3.75</td>
+			    <td>3.24</td>
+			    <td>3.82</td>
+			    <td>28.40</td>
+			  </tr>
+			  <tr>
 			    <td colspan="8" class="section-header">Our model</td>
 			  </tr>
 			  <tr>
@@ -721,7 +751,7 @@
 		</div>
 	
 		<h3 id="VBench" style="text-align: left;">VBench</h3>
-		<p>To evaluate the performance of text-to-video generation, we adopted multiple evaluation metrics that align with human perception, which are also used in Vbench. These include: (1) <b>Subject Consistency</b>, to assess the consistency of the video's subject appearance; (2) <b>Background Consistency</b>, to evaluate the temporal consistency of the video's background; (3) <b>Motion Smoothness</b>, to measure the smoothness of the generated motion; (4) <b>Dynamic Degree</b>, to assess whether the video contains large-scale movements; (5) <b>Aesthetic Quality</b>, to evaluate the aesthetic quality of the video (aesthetic scoring can be ignored for medical videos); and (6) <b>Imaging Quality</b>, to assess the overall imaging quality of the video. Although many models achieve high image quality, they often suffer from noticeable distortions. Therefore, we also evaluate the <b>Distortion Rate</b>, which is determined through human assessment. The medical video usually lacks aesthetic appeal, so we omitted it in the calculation of the average score.</p>
+		<p>To evaluate the performance of text-to-video generation, we adopted multiple evaluation metrics that align with human perception, which are also used in Vbench. These include: (1) <b>Subject Consistency</b>, to assess the consistency of the video's subject appearance; (2) <b>Background Consistency</b>, to evaluate the temporal consistency of the video's background; (3) <b>Motion Smoothness</b>, to measure the smoothness of the generated motion; (4) <b>Dynamic Degree</b>, to assess whether the video contains large-scale movements; (5) <b>Aesthetic Quality</b>, to evaluate the aesthetic quality of the video (aesthetic scoring can be ignored for medical videos); and (6) <b>Imaging Quality</b>, to assess the overall imaging quality of the video. Although many models achieve high image quality, they often suffer from noticeable distortions. Therefore, we also evaluate the <b>Warping Error</b>, which is determined through human assessment. The medical video usually lacks aesthetic appeal, so we omitted it in the calculation of the average score.</p>
 		<div class="table-responsive pt-3">
 		<table class="comparison-table">
 		  <tr>
@@ -733,7 +763,7 @@
 		    <th>Dynamic Degree ↑</th>
 		    <th>Aesthetic Quality ↑</th>
 		    <th>Imaging Quality ↑</th>
-		    <th>Distortion Rate ↓</th>
+		    <th>Warping Error ↓</th>
 		  </tr>
 		  <tr>
 		    <td colspan="9" class="section-header">Open-source video generation model</td>
@@ -759,6 +789,17 @@
 		    <td>42.61</td>
 		    <td>56.10</td>
 		    <td>80.00</td>
+		  </tr>
+		  <tr>
+		    <td class="model-name">Wan2.1-T2V-1.3B</td>
+		    <td>72.43</td>
+		    <td>90.48</td>
+		    <td>92.75</td>
+		    <td>98.03</td>
+		    <td>77.00</td>
+		    <td>44.34</td>
+		    <td>53.81</td>
+		    <td>77.50</td>
 		  </tr>
 		  <tr>
 		    <td class="model-name">Open Sora (v1.2)</td>
@@ -882,6 +923,17 @@
 		    <td>45.00</td>
 		  </tr>
 		  <tr>
+		    <td class="model-name">Wan2.1-T2V-14B</td>
+		    <td>77.13</td>
+		    <td>91.86</td>
+		    <td>94.13</td>
+		    <td>98.51</td>
+		    <td>72.00</td>
+		    <td>47.43</td>
+		    <td>56.27</td>
+		    <td>50.00</td>
+		  </tr>
+		  <tr>
 		    <td colspan="9" class="section-header">Commercial video generation model</td>
 		  </tr>
 		  <tr>
@@ -905,6 +957,17 @@
 		    <td>53.72</td>
 		    <td>69.62</td>
 		    <td>42.29</td>
+		  </tr>
+		  <tr>
+		    <td class="model-name">Sora</td>
+		    <td>85.91</td>
+		    <td>93.40</td>
+		    <td>95.36</td>
+		    <td>99.21</td>
+		    <td>83.95</td>
+		    <td>51.23</td>
+		    <td>71.96</td>
+		    <td>28.40</td>
 		  </tr>
 		  <tr>
 		    <td colspan="9" class="section-header">Our model</td>
